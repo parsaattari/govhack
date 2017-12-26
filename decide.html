@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.25rem;
+  font-family: sans-serif;
+  line-height: 150%;
+}
+
+section {
+  color: #fff;
+  text-align: center;
+}
+
+div {
+  height: 100%;
+}
+
+article {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.05rem;
+  margin: 0 0 0.75rem 0;
+  color: black;
+}
+
+a {
+  color: black;
+  font-size: 2.75rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Pattern styles */
+.container {
+  display: table;
+  width: 100%;
+}
+
+.left-half {
+  background: url('./tree.jpg');
+  position: absolute;
+  left: 0px;
+  width: 50%;
+}
+
+.right-half {
+  background: url('./seed.jpg');
+  position: absolute;
+  right: 0px;
+  width: 50%;
+}
+
+ul {
+  font-size: 30px;
+  font-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+  font: Arial;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+li a:hover {
+    background-color: #ddd;
+}
+
+label {
+  display: block;
+}
+
+.btn {
+  padding: 8px;
+  background-color: black;
+  color: #fff;
+  font-size: 1.05rem;
+  text-align: center;
+
+}
+
+.input {
+  padding: 5px;
+  text-align: left;
+  background-color: white;
+/*  margin-top: 60px;
+  margin-right: 1px;
+  margin-bottom: 0px;
+  margin-left: 10px;*/
+  font-size: 100%;
+  font-style: normal;
+  width: 486px;
+  height: 35px;
+  border-right: 1000;
+  border-right-width: 100px;
+  border-right-style: initial;
+  border-right-color: initial;
+  padding-top: 7px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+</style>
+<section class="container">
+  <div class="left-half">
+    <ul>
+      <li><a href="./index.html">العربية</a></li>
+      <li><a href="#">فارسی</a></li>
+    </ul>
+    <article>
+      <h1>Get Information About A Specific Country</h1>
+      <div class="input-wrapper">
+        <input class="input" type="text" id="input" onchange="redirect()">
+      </div>
+      <button class="btn" onclick="redirect()">Search</button>
+    </article>
+  </div>
+  <div class="right-half">
+    <article>
+      <a href=''>Explore Countries</a>
+    </article>
+  </div>
+</section>
+<!-- </body> -->
+
+<script>
+function redirect() {
+  var countries = ['usa', 'united states', 'united states of america', 'america', 'france', 'uk', 'england', 'united kingdom', 'great britain']
+  var search = document.getElementById('input').value
+  console.log(search)
+  var searchLower = search.toLowerCase()
+  if (countries.includes(searchLower)){
+    window.location = 'https://www.google.com/search?source=hp&ei=gJlAWv-LGaeU0gLAkZjwAw&q='+search+'&oq='+search+'&gs_l=psy-ab.3..0l3j0i131k1j0l3j0i131k1l2j0i3k1.748.1282.0.1495.7.6.0.0.0.0.99.468.5.6.0....0...1c.1.64.psy-ab..1.5.467.0...80.rbvwlaej2Cg';
+    return true
+  } else{
+    alert('Choose a valid country');
+  }
+}
+
+// function redirect2() {
+//   var countries = ['usa', 'united states', 'united states of america', 'america', 'france', 'uk', 'england', 'united kingdom', 'great britain']
+//   var search = document.getElementById('input').value
+//   console.log(search)
+//   var searchLower = search.toLowerCase()
+//   if (countries.includes(searchLower)){
+//     window.location = 'https://www.google.com/search?source=hp&ei=gJlAWv-LGaeU0gLAkZjwAw&q='+search+'&oq='+search+'&gs_l=psy-ab.3..0l3j0i131k1j0l3j0i131k1l2j0i3k1.748.1282.0.1495.7.6.0.0.0.0.99.468.5.6.0....0...1c.1.64.psy-ab..1.5.467.0...80.rbvwlaej2Cg';
+//     return true
+//   } else{
+//     alert('Choose a valid country');
+//   }
+// }
+</script>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Gerogia;
+    font-size: 17px;
+    text-align: center;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    opacity: 0.7;
+}
+
+.content {
+    position: fixed;
+    bottom: 10;
+    text-align: center;
+    color: black;
+    width: 100%;
+    padding: 20px;
+    font: Georgia;
+}
+
+.contentText {
+    font-style: italic;
+}
+
+ul {
+    font-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+  font: Arial;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+    background-color: #ddd;
+}
+
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+
+
+</style>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+  <source src="seed.mp4" type="video/mp4">
+</video>
+
+
+<div class="content">
+  <ul>
+    <li><a class="active" href="index.html">العربية</a></li>
+    <li><a href="farsi.html">فارسی</a></li>
+  </ul>
+  <div class="contentText">
+    <h1>بنی آدم اعضای یک پیکرند</h1>
+	<h1>که در آفرينش ز یک گوهرند</h1>
+	<h1>چو عضوى به درد آورد روزگار</h1>
+	<h1>دگر عضو ها را نماند قرار</h1>
+	<h1>تو کز محنت دیگران بی غمی</h1>
+	<h1>نشاید که نامت نهند آدمی</h1>
+    <button id="myBtn" onclick="myFunction()">به سوی آیندی بهتر</button>
+  </div>
+</div>
+
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  window.location = "decide.html";
+  // if (video.paused) {
+  //   video.play();
+  //   btn.innerHTML = "Pause";
+  // } else {
+  //   video.pause();
+  //   btn.innerHTML = "Play";
+  // }
+}
+</script>
+
+</body>
+</html>
