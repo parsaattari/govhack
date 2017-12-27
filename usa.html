@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
 <style>
 * {
@@ -11,15 +10,6 @@ body {
     font-family: Gerogia;
     font-size: 17px;
     text-align: center;
-}
-
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    opacity: 0.7;
 }
 
 .content {
@@ -34,6 +24,18 @@ body {
 
 .contentText {
     font-style: italic;
+}
+
+.titles {
+	font-style: bold;
+	font-size: 12px;
+	text-align: left;
+}
+.info {
+	font-style: italic;
+	font-size: 10px;
+	text-align: left;
+
 }
 
 ul {
@@ -76,44 +78,25 @@ li a:hover {
     background: #ddd;
     color: black;
 }
-
-
 </style>
 </head>
+
 <body>
-
-<video autoplay muted loop id="myVideo">
-  <source src="seed.mp4" type="video/mp4">
-</video>
-
 
 <div class="content">
   <ul>
     <li><a class="active" href="arabic.html">العربية</a></li>
     <li><a href="farsi.html">فارسی</a></li>
   </ul>
-  <div class="contentText">
-    <h1>When you have more than you need,</h1> 
-    <h1>build a longer table not a higher fence</h1>
-    <button id="myBtn" onclick="myFunction()">Create A Future</button>
+  <h1>United States of America<h1>
+  <div class="titles">
+    <h2>What does America define as a refugee:</h2> 
+    <div class="info">
+    <h4> a person of a certain nationality that is unable to return to that person's country in which they habitually resided due to a lack of protection or persection/actual fear of persection based on race, religion, nationality, membership in a particular social group, or political opinion or 
+ political opinion, or any person the President specifies with consultations of circumstances. Anyone who has ordered, incited, assisted, or otherwise participated in the persecution of any person on 
+ account of race, religion, nationality, membership in a particular social group, or political opinion will no longer be considered a refugee.</h4>
+ </div>
+    
   </div>
 </div>
-
-<script>
-var video = document.getElementById("myVideo");
-var btn = document.getElementById("myBtn");
-
-function myFunction() {
-  window.location = "decide.html";
-  // if (video.paused) {
-  //   video.play();
-  //   btn.innerHTML = "Pause";
-  // } else {
-  //   video.pause();
-  //   btn.innerHTML = "Play";
-  // }
-}
-</script>
-
 </body>
-</html>

@@ -41,6 +41,15 @@ a {
   text-decoration: none;
 }
 
+.btn-right {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
+}
+
 /* Pattern styles */
 .container {
   display: table;
@@ -144,17 +153,27 @@ label {
     <article>
       <a href=''>Explore Countries</a>
     </article>
+<!--     <button class="btn-right" onclick="usa()">Explore Countries</button>  -->
   </div>
 </section>
 <!-- </body> -->
 
 <script>
+
 function redirect() {
-  var countries = ['usa', 'united states', 'united states of america', 'america', 'france', 'uk', 'england', 'united kingdom', 'great britain']
+  var countries = ['us', 'usa', 'united states', 'united states of america', 'america', 'canda', 'australia', 'au', 'oz' ]
   var search = document.getElementById('input').value
   console.log(search)
   var searchLower = search.toLowerCase()
-  if (countries.includes(searchLower)){
+  var us = ['us', 'usa', 'united states', 'united states of america', 'america']
+  var au = ['au', 'oz', 'australia', 'the land down under']
+  if (us.includes(searchLower)) {
+    window.location = "./usa.html";
+  }
+  else if (au.includes(searchLower)) {
+    window.location = "./au.html";
+  }
+  else if (countries.includes(searchLower)){
     window.location = 'https://www.google.com/search?source=hp&ei=gJlAWv-LGaeU0gLAkZjwAw&q='+search+'&oq='+search+'&gs_l=psy-ab.3..0l3j0i131k1j0l3j0i131k1l2j0i3k1.748.1282.0.1495.7.6.0.0.0.0.99.468.5.6.0....0...1c.1.64.psy-ab..1.5.467.0...80.rbvwlaej2Cg';
     return true
   } else{

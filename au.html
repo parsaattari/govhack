@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
 <style>
 * {
@@ -11,15 +10,6 @@ body {
     font-family: Gerogia;
     font-size: 17px;
     text-align: center;
-}
-
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    opacity: 0.7;
 }
 
 .content {
@@ -34,6 +24,18 @@ body {
 
 .contentText {
     font-style: italic;
+}
+
+.titles {
+	font-style: bold;
+	font-size: 12px;
+	text-align: left;
+}
+.info {
+	font-style: italic;
+	font-size: 10px;
+	text-align: left;
+
 }
 
 ul {
@@ -76,44 +78,23 @@ li a:hover {
     background: #ddd;
     color: black;
 }
-
-
 </style>
 </head>
+
 <body>
-
-<video autoplay muted loop id="myVideo">
-  <source src="seed.mp4" type="video/mp4">
-</video>
-
 
 <div class="content">
   <ul>
     <li><a class="active" href="arabic.html">العربية</a></li>
     <li><a href="farsi.html">فارسی</a></li>
   </ul>
-  <div class="contentText">
-    <h1>When you have more than you need,</h1> 
-    <h1>build a longer table not a higher fence</h1>
-    <button id="myBtn" onclick="myFunction()">Create A Future</button>
+  <h1>Australia<h1>
+  <div class="titles">
+    <h2>What does Australia define as a refugee:</h2> 
+    <div class="info">
+    <h4> researching...</h4>
+ </div>
+    
   </div>
 </div>
-
-<script>
-var video = document.getElementById("myVideo");
-var btn = document.getElementById("myBtn");
-
-function myFunction() {
-  window.location = "decide.html";
-  // if (video.paused) {
-  //   video.play();
-  //   btn.innerHTML = "Pause";
-  // } else {
-  //   video.pause();
-  //   btn.innerHTML = "Play";
-  // }
-}
-</script>
-
 </body>
-</html>
