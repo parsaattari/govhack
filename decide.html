@@ -135,6 +135,11 @@ label {
 }
 
 </style>
+
+<head>
+<link rel="icon" href="logo2.png">
+</head>
+
 <section class="container">
   <div class="left-half">
     <ul>
@@ -150,18 +155,20 @@ label {
     </article>
   </div>
   <div class="right-half">
-    <article>
+<!--     <article>
       <a href=''>Explore Countries</a>
-    </article>
-<!--     <button class="btn-right" onclick="usa()">Explore Countries</button>  -->
+    </article> -->
+    <button class="btn-right" onclick="questionaire()">Explore Countries</button> 
   </div>
 </section>
 <!-- </body> -->
 
 <script>
-
+function questionaire() {
+  window.location = "./questionaire.html";
+}
 function redirect() {
-  var countries = ['us', 'usa', 'united states', 'united states of america', 'america', 'canda', 'australia', 'au', 'oz' ]
+  var countries = ['us', 'usa', 'united states', 'united states of america', 'america', 'canada', 'australia', 'au', 'oz' ]
   var search = document.getElementById('input').value
   console.log(search)
   var searchLower = search.toLowerCase()
