@@ -182,7 +182,17 @@ p{
 
     <hr size="7" color="white">
 
-    <h2>FILL THIS PART IN WITH INFORMATION THAT MATCHES THE SPECIFIC PERSON. LIKE TALK ABOUT HOW THAT PERSON'S BACKGROUND MACTHES THESE CITIES IN America BECAUSE OF THE INDUSTRY THEY ARE FAMOUS FOR AND ETC.
+    <p id="text"></p>
+
+    <script> 
+    function getResponse() {
+      var res = sessionStorage.getItem('response');
+      console.log(res);
+      document.getElementById("text").innerHTML = res;
+    }
+    getResponse();
+    </script>
+    
 
     <hr size="7" color="white">
 

@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<form action="./usa.html">
+<form id="questionaire" action="./usa.html" method=myFunciton()>
 <div class="container-fluid">
     
 <div class="form-group">
@@ -87,16 +87,34 @@
   <span aria-hidden="true"></span>
 </div>
   
-<div class="form-group">
-  <label class="control-label" for="finances">Question 12:Rank your financial situation:</label>
-  <input type="text" class="form-control">
-  <span aria-hidden="true"></span>
-</div>
+<p><label for="rate">Question 12: Rank your financial situation(bad = 1, good = 10): </label>
+<input type="range" min="0" max="10" id="rate" name="rate" value="0" oninput="thisRate.value = rate.value">
+<output name="thisRate" for="range">0</output></p>
+  
 <br>
-<input type="submit" value="Submit">
+<input type="submit" onclick="myFunction()" value="Submit">
 
 </div>
 </form>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("questionaire");
+    var response = [];
+    var i;
+    for (i = 0; i < x.length - 1 ;i++) {
+        response.push(x.elements[i].value);
+    }
+    console.log(response);
+    sessionStorage.setItem('response', response);
+    console.log(sessionStorage.getItem('response'));
+
+}
+</script>
 
     
 <!-- jQuery library -->
