@@ -1,56 +1,106 @@
 <!DOCTYPE html>
-<head>
+<html>
 <style>
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 body {
-    margin: 0;
-    font-family: Gerogia;
-    font-size: 17px;
-    text-align: center;
+  font-size: 1.25rem;
+  font-family: sans-serif;
+  line-height: 150%;
 }
 
-.content {
-    position: fixed;
-    bottom: 10;
-    text-align: center;
-    color: black;
-    width: 100%;
-    padding: 20px;
-    font: Georgia;
+html, body {
+  margin: 0; 
+  padding: 0;
 }
 
-.contentText {
-    font-style: italic;
+section {
+  color: #fff;
+  text-align: center;
 }
 
-.titles {
-	font-style: bold;
-	font-size: 12px;
-	text-align: left;
-}
-.info {
-	font-style: italic;
-	font-size: 10px;
-	text-align: left;
-
+div {
+  height: 100%;
 }
 
-ul {
-    font-style: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+article {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
 }
 
-li {
+h1 {
+  font-size: 2.05rem;
+  margin: 0 0 0.75rem 0;
+  color: white;
+}
+
+a {
+  color: white;
+  font-size: 2.75rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-right {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
+}
+
+/* Pattern styles */
+.container {
+  display: table;
+  width: 100%;
+  margin: 0; 
+  padding: 0;
+}
+
+.left-half {
+  background: url('./au.png');
+  /*position: absolute;*/
+  padding: 0;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  /*background-size: cover;*/
+  /*no-repeat center center fixed; */
+  /*-webkit-background-size: cover;*/
+  /*-moz-background-size: cover;*/
+  /*-o-background-size: cover;*/
+  /*background-size: cover;*/
+/*  position: absolute; 
+  top: 0; 
+  left: 0; */
+  
+   /*Preserve aspet ratio */
+/*  min-width: 100%;
+  min-height: 100%;*/
+}
+
+.navUL {
+  font-size: 30px;
+  font-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 1.0;
+}
+
+.navLI {
     float: left;
 }
 
-li a {
+.navLI a {
   font: Arial;
   display: block;
   color: black;
@@ -58,43 +108,173 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 1.05rem;
+  opacity: 1.0;
 }
 
-li a:hover {
+.navLI a:hover {
     background-color: #ddd;
 }
 
-#myBtn {
-    width: 200px;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
+label {
+  display: block;
 }
 
-#myBtn:hover {
-    background: #ddd;
-    color: black;
+.score{
+  text-align: left;
 }
+.canada{
+  text-align: center;
+  font-size: 80px;
+  color: black;
+}
+
+h2{
+  text-align: left;
+  color: black
+}
+
+.header2{
+  text-align: left;
+  color: black;
+}
+
+.header3{
+  text-align: left;
+  color: black;
+}
+
+.liLink{
+  font-size: 24px;
+}
+
+p{    
+  padding-top: 5px;  
+  padding-bottom: 5px;  
+  padding-right: 5px;  
+  padding-left: 30px;  
+  color: black;
+     
+  }
+
+/*li{
+  color: black;
+}*/
+
 </style>
+<head>
+<link rel="icon" href="logo2.png">
 </head>
 
-<body>
+<section class="container">
+  <div class="left-half">
+    <ul class="navUL">
+      <li class="navLI"><a href="./index.html">العربية</a></li>
+      <li class="navLI"><a href="farsi.html">فارسی</a></li>
+    </ul>
+    <h1 class="canada"> 
+      <span>Australia</span>
+    </h1>
+    <br>
+    <br>
+    <h1 class="score">
+      <span style="font-size: 60px; color: black; ">Score: </span>
+      <span style="font-size: 50px; color: green;">97</span>
+    </h1>
+    <h1 class="score">
+      <span style="font-size: 50px; color: black; ">Recommendation: </span>
+      <span style="font-size: 50px; color: black;">Great for Immigration</span>
+    </h1>
 
-<div class="content">
-  <ul>
-    <li><a class="active" href="arabic.html">العربية</a></li>
-    <li><a href="farsi.html">فارسی</a></li>
-  </ul>
-  <h1>Australia<h1>
-  <div class="titles">
-    <h2>What does Australia define as a refugee:</h2> 
-    <div class="info">
-    <h4> researching...</h4>
- </div>
+    <hr size="7" color="black">
+
+    <p id="text"></p>
+
+    <script> 
+    function getResponse() {
+      var res = sessionStorage.getItem('response');
+      console.log(res);
+
+      var fleed = res[0];
+      var been = res[1];
+      var residing = res[2];
+      var gender = res[3];
+      var profession = res[4];
+      var skills = res[5];
+      var languages = res[6];
+      var kids = res[7];
+      var numberKids= res[8];
+      var family = res[9];
+      var friends = res[10];
+      var finances = res[11];
+
+      var aveSalary = "130,000";
+
+// refugee camp in Jordan
+// dentist 
+
+
+
+      var text = "Hello! It seems as though Australia is the best fit for you. We recommend attempting to get a referral the UNHCR should be collecting applications at the " + residing + ". The AU is currently working hard to bridge the gap between genders. The average salary of a " + profession + " is " + aveSalary + ". If you would like to look into other oppurtnities in the country based on your other skills; there are many oppurtnities in Australia.";
+      if (languages.length >= 0) {
+        text += " The fact that you know " + languages + " is very valubale when looking for jobs. ";
+      }
+      if (parseInt(kids) > 0) {
+        text += "Going through the resettling process can be espically hard on children. Australia has school systems for all ages. " 
+      }
+      if (family == "Australia" || friends == "Australia") {
+        text += " Your friends or family in Australia can be your proposers for your application here to help the communications go more smoothly."
+      }
+
+// The average <profession> dentist in America makes <salary>. With your <cooking skills> you could also work as a <chief>. The average <chief> makes <salary>."
+      document.getElementById("text").innerHTML = text;
+    }
+    getResponse();
+    </script>
     
+
+    <hr size="7" color="black">
+
+    <h2 class="header2"> Australia’s Refugee and Humanitarian Programme:</h2>
+    <h3 class="header3">
+      <span style="font-size: 26px; color: black;">Who does Australia define as a refugee: </span>     
+        <p> They are outside Australia. They have been identified as a refugee or a person subject to persecution or substantial discrimination amounting to gross violation of human rights in their home country and deemed to be in humanitarian need..</p>
+    </h3>
+    <h3 class="header3">
+      <span style="font-size: 25px; color: black;">The application process:</span> 
+
+          <ul style="list-style-type:disc">
+            <li>First, you must pass the initial assessment and be considered a "refugee" as defined above.</li> 
+            <br>
+            <li>Then you must meet the following criteria as to be determined from an interview with a Australian Immigration officer that will come to your location or meet you at a local immigration office:</li>
+              <ul>
+                <li>health requirements. ** all expenses paid by the Australian Government.</li>
+                <li>will be asked about current circumstances and other information from application.</li>
+                <li>character requirements .</li>
+              </ul>
+              
+          <br>
+          Include family members in your application!
+          <br> 
+          <br>** There is no fee to apply for a humanitarian visa. 
+        </ul>
+    </h3>
+    <h3 class="header3">
+      <span style="font-size: 25px; color: black;">Useful Resources:</span>
+      <br>
+      <ul style="list-style-type:disc">
+          <li>Tips on traveling to <a href="https://www.homeaffairs.gov.au/Trav/Refu/Offs/Information-on-travelling-to-Australia" class="liLink"> <span style="color: blue;">Australia</span></a>
+          </li>
+          <li style="color: black;">Health Requirement waiver  <a href="https://www.homeaffairs.gov.au/Trav/Visa/Heal/meeting-the-health-requirement/health-waivers" class="liLink"> <span style="color: blue;">form</span>
+          </li>
+      </ul> 
+    </h3>
+
   </div>
-</div>
-</body>
+</section>
+
+<script>
+
+
+</script>
+</html>
+
