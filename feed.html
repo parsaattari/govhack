@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.25rem;
+  font-family: sans-serif;
+  line-height: 150%;
+}
+
+html, body {
+  margin: 0; 
+  padding: 0;
+}
+
+section {
+  color: #fff;
+  text-align: center;
+}
+
+div {
+  height: 100%;
+}
+
+article {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.05rem;
+  margin: 0 0 0.75rem 0;
+  color: white;
+}
+
+a {
+  color: white;
+  font-size: 2.75rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-right {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 20px;
+}
+
+/* Pattern styles */
+.container {
+  display: table;
+  width: 100%;
+  margin: 0; 
+  padding: 0;
+}
+
+.left-half {
+  background: url('./feed.png');
+  /*position: absolute;*/
+  padding: 0;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+
+}
+
+.navUL {
+  font-size: 30px;
+  font-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 1.0;
+}
+
+.navLI {
+    float: left;
+}
+
+.navLI a {
+  font: Arial;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  opacity: 1.0;
+}
+
+.navLI a:hover {
+    background-color: #ddd;
+}
+
+label {
+  display: block;
+}
+
+.score{
+  text-align: left;
+}
+.canada{
+  text-align: center;
+  font-size: 60px;
+  color: black;
+}
+
+h2{
+  text-align: left;
+  color: black
+}
+
+.header2{
+  text-align: left;
+  color: black;
+}
+
+.header3{
+  text-align: left;
+  color: black;
+}
+
+.liLink{
+  font-size: 24px;
+}
+
+p{    
+  padding-top: 5px;  
+  padding-bottom: 5px;  
+  padding-right: 5px;  
+  padding-left: 30px;  
+  color: black;
+     
+  }
+
+.square {
+  /*width: 60%;*/
+  width: 700px;
+  height: 300px;
+  border: 2px solid black;
+  padding: 10px;
+  margin: auto;
+}
+
+.experience{
+  color: black;
+}
+
+
+</style>
+<head>
+<link rel="icon" href="logo2.png">
+</head>
+
+<section class="container">
+  <div class="left-half">
+    <ul class="navUL">
+      <li class="navLI"><a href="./index.html">العربية</a></li>
+      <li class="navLI"><a href="farsi.html">فارسی</a></li>
+    </ul>
+    <br>
+    <br>
+    <h1 class="canada"> 
+      Help a fellow refugee by sharing your experience
+    </h1>
+    <br>
+    <h2>
+      Share a story, experience, or just tips to help others avoid mistakes that you made so they have an easier journey 
+    </h2>
+    <hr size="7" color="black">
+    <br>
+    <form class="experience">
+      <input type="text" name="name" id="user_input" value="Name"><br>
+      <textarea id ="ex" cols="50" rows="6" name="comment"></textarea>
+    </form>
+    <input type="submit" onclick="showInput();"><br/>
+    <div class="square">
+      <span style="font-size: 20px; color: green;">Ahmad:</span>
+      <span style="font-size: 20px; color: black;">Inorder to buy anything, in the US, you need to be able to build credit. This is a way of proving that you will payoff the money they are kind of loaning to you. I learned that you can build credit by either opening a credit card and paying it off monthly, or the more things you buy and payoff will further build your creidt.</span><br>
+      <span id='display' style="font-size: 20px; color: green;"></span>
+      <span id='display2' style="font-size: 20px; color: black;"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+  function showInput() {
+    var name = document.getElementById("user_input").value;
+    var experience = document.getElementById("ex").value;
+    var result = name + ": "
+    document.getElementById('display').innerHTML = result
+    document.getElementById('display2').innerHTML = experience
+    // document.getElementById('display').innerHTML = result
+  }
+</script>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.25rem;
+  font-family: sans-serif;
+  line-height: 150%;
+}
+
+html, body {
+  margin: 0; 
+  padding: 0;
+}
+
+.left-half {
+  background: url('./feed.png');
+  position: absolute;
+  /*padding: 0;*/
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+.name{
+	text-align: center;
+}
+.experience{
+  /*position: absolute;*/
+  text-align: center;
+  top: 30px;
+  left: 300px;
+  /*width: 50%;*/
+  height: 50%;
+}
+
+.navUL {
+  font-size: 30px;
+  font-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 1.0;
+}
+
+.navLI {
+    float: left;
+}
+
+.navLI a {
+  font: Arial;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  opacity: 1.0;
+}
+
+.navLI a:hover {
+    background-color: #ddd;
+}
+
+</style>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+    function showInput() {
+        document.getElementById('display').innerHTML = 
+                    document.getElementById("user_input").value;
+    }
+  </script>
+
+  </head>
+<body>
+  <ul class="navUL">
+      <li class="navLI"><a href="./index.html">العربية</a></li>
+      <li class="navLI"><a href="farsi.html">فارسی</a></li>
+    </ul>
+<div class="left-half">
+  <form class="name">
+    <label>Name</label><br>
+    <input type="text" name="name" id="user_input" value="Name">
+  </form>
+  <form class="experience">
+    <label>Name</label><br>
+  	<input type="text" class="experience" id="user_input">
+  </form>
+  
+
+  <input type="submit" onclick="showInput();"><br/>
+  <label>Your input: </label>
+  <p><span id='display'></span></p>
+ </div>
+</body>
+</html> -->
