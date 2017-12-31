@@ -188,7 +188,38 @@ p{
     function getResponse() {
       var res = sessionStorage.getItem('response');
       console.log(res);
-      document.getElementById("text").innerHTML = res;
+
+      var fleed = res[0];
+      var been = res[1];
+      var residing = res[2];
+      var gender = res[3];
+      var profession = res[4];
+      var skills = res[5];
+      var languages = res[6];
+      var kids = res[7];
+      var numberKids= res[8];
+      var family = res[9];
+      var friends = res[10];
+      var finances = res[11];
+
+      var aveSalary = "172,350";
+
+// refugee camp in Jordan
+// dentist 
+
+
+
+      var text = "Hello! It seems as though The United States of America is the best fit for you. We recommend attempting to get a referral the UNCR should be collecting applications at the " + residing + ". The US is currently working hard to bridge the gap between genders. The average salary of a " + profession + " is " + aveSalary + ". If you would like to look into other oppurtnities in the country based on your other skills; there are many oppurtnities in America.";
+      if (languages.length >= 0) {
+        text += " The fact that you know " + languages + " is very valubale when looking for jobs. ";
+      }
+      if (parseInt(kids) > 0) {
+        text += "Going through the resettling process can be espically hard on children. The United States has school systems for all ages. " 
+      }
+      if (family == "united states" || friends == "united states ")
+
+// The average <profession> dentist in America makes <salary>. With your <cooking skills> you could also work as a <chief>. The average <chief> makes <salary>."
+      document.getElementById("text").innerHTML = text;
     }
     getResponse();
     </script>
