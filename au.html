@@ -188,7 +188,7 @@ p{
     <br>
     <h1 class="score">
       <span style="font-size: 60px; color: black; ">Score: </span>
-      <span style="font-size: 50px; color: green;">97</span>
+      <span style="font-size: 50px; color: green;">n/a</span>
     </h1>
     <h1 class="score">
       <span style="font-size: 50px; color: black; ">Recommendation: </span>
@@ -222,20 +222,24 @@ p{
 // refugee camp in Jordan
 // dentist 
 
+      if (res.length > 1000) {
+        var text = "";
 
-
-      var text = "Hello! It seems as though Australia is the best fit for you. We recommend attempting to get a referral the UNHCR should be collecting applications at the " + residing + ". The AU is currently working hard to bridge the gap between genders. The average salary of a " + profession + " is " + aveSalary + ". If you would like to look into other oppurtnities in the country based on your other skills; there are many oppurtnities in Australia.";
-      if (languages.length >= 0) {
-        text += " The fact that you know " + languages + " is very valubale when looking for jobs. ";
+        // "Hello! It seems as though Australia is the best fit for you. We recommend attempting to get a referral the UNHCR should be collecting applications at the " + residing + ". The AU is currently working hard to bridge the gap between genders. The average salary of a " + profession + " is " + aveSalary + ". If you would like to look into other oppurtnities in the country based on your other skills; there are many oppurtnities in Australia.";
+        if (languages.length >= 0) {
+          text += " The fact that you know " + languages + " is very valubale when looking for jobs. ";
+        }
+        if (parseInt(kids) > 0) {
+          text += "Going through the resettling process can be espically hard on children. Australia has school systems for all ages. " 
+        }
+        if (family == "Australia" || friends == "Australia") {
+          text += " Your friends or family in Australia can be your proposers for your application here to help the communications go more smoothly."
+        }
+        
+      } else {
+          var text = "";
+          //"Please fill out the survey on the last page in the Explore Countries link to be properly mathced."
       }
-      if (parseInt(kids) > 0) {
-        text += "Going through the resettling process can be espically hard on children. Australia has school systems for all ages. " 
-      }
-      if (family == "Australia" || friends == "Australia") {
-        text += " Your friends or family in Australia can be your proposers for your application here to help the communications go more smoothly."
-      }
-
-// The average <profession> dentist in America makes <salary>. With your <cooking skills> you could also work as a <chief>. The average <chief> makes <salary>."
       document.getElementById("text").innerHTML = text;
     }
     getResponse();

@@ -189,7 +189,7 @@ p{
     <br>
     <h1 class="score">
       <span style="font-size: 60px; color: black; ">Score: </span>
-      <span style="font-size: 50px; color: green;">97</span>
+      <span style="font-size: 50px; color: green;">n/a</span>
     </h1>
     <h1 class="score">
       <span style="font-size: 50px; color: black; ">Recommendation: </span>
@@ -224,26 +224,25 @@ p{
 // refugee camp in Jordan
 // dentist 
 
-
-
-      var text = "Hello! It seems as though The United States of America is the best fit for you. We recommend attempting to get a referral the UNCR should be collecting applications at the " + residing + ". The US is currently working hard to bridge the gap between genders. The average salary of a " + profession + " is " + aveSalary + ". If you would like to look into other oppurtnities in the country based on your other skills; there are many oppurtnities in America.";
-      if (languages.length >= 0) {
-        text += " The fact that you know " + languages + " is very valubale when looking for jobs. ";
+      if (res.length > 0) {
+        var text = "Hello! It seems as though The United States of America is the best fit for you. We recommend attempting to get a referral the UNCR should be collecting applications at the " + residing + ". The US is currently working hard to bridge the gap between genders. The average salary of a " + profession + " is " + aveSalary + ". If you would like to look into other oppurtnities in the country based on your other skills; there are many oppurtnities in America.";
+        if (languages.length >= 0) {
+          text += " The fact that you know " + languages + " is very valubale when looking for jobs. ";
+        }
+        if (parseInt(kids) > 0) {
+          text += "Going through the resettling process can be espically hard on children. The United States has school systems for all ages. " 
+        }
+      } else {
+          var text = "Please fill out the survey on the last page in the Explore Countries link to be properly mathced."
       }
-      if (parseInt(kids) > 0) {
-        text += "Going through the resettling process can be espically hard on children. The United States has school systems for all ages. " 
-      }
-      // if (family == "united states" || friends == "united states ")
-
-// The average <profession> dentist in America makes <salary>. With your <cooking skills> you could also work as a <chief>. The average <chief> makes <salary>."
       document.getElementById("text").innerHTML = text;
     }
     getResponse();
     </script>
     
-    <h2>We believe you match United States of America the best! <br><br></h2>
+<!--     <h2>We believe you match United States of America the best! <br><br></h2>
     <h3 class="last">
-      This is because you indicated that your last profession was in the <u>Computer Science</u> field. <br><br>San Francisco, a.k.a. Silicon Valley, is wordly known for the hosting the HQ of various tech giants. The main industry in the area is tech. and all the hundreds of companies are constantly looking for programmers. With you knowledge of it you will have no problem finding a job!</h3>
+      This is because you indicated that your last profession was in the <u>Computer Science</u> field. <br><br>San Francisco, a.k.a. Silicon Valley, is wordly known for the hosting the HQ of various tech giants. The main industry in the area is tech. and all the hundreds of companies are constantly looking for programmers. With you knowledge of it you will have no problem finding a job!</h3> -->
 
     <hr size="7" color="black">
 
