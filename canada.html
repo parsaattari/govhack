@@ -154,6 +154,7 @@ h2{
 }
 
 </style>
+
 <section class="container">
   <div class="left-half">
     <a href="index.html">
@@ -171,7 +172,7 @@ h2{
     <br>
     <h1 class="score">
       <span style="font-size: 60px; color: black; ">Score: </span>
-      <span style="font-size: 50px; color: green;">98</span>
+      <span style="font-size: 50px; color: green;">75</span>
     </h1>
     <h1 class="score">
       <span style="font-size: 50px; color: black; ">Recommendation: </span>
@@ -180,7 +181,51 @@ h2{
 
     <hr size="7" color="black">
 
-    <h2>FILL THIS PART IN WITH INFORMATION THAT MATCHES THE SPECIFIC PERSON. LIKE TALK ABOUT HOW THAT PERSON'S BACKGROUND MACTHES THESE CITIES IN CANADA BECAUSE OF THE INDUSTRY THEY ARE FAMOUS FOR AND ETC.
+
+    <p id="text"></p>
+
+    <script> 
+    function getResponse() {
+      var res = sessionStorage.getItem('response');
+      console.log(res);
+
+      var fleed = res[0];
+      var been = res[1];
+      var residing = res[2];
+      var gender = res[3];
+      var profession = res[4];
+      var skills = res[5];
+      var languages = res[6];
+      var kids = res[7];
+      var numberKids= res[8];
+      var family = res[9];
+      var friends = res[10];
+      var finances = res[11];
+
+      var aveSalary = "140,000";
+
+// refugee camp in Jordan
+// dentist 
+
+
+
+      var text = "Hello! It seems as though Canada is the best fit for you. We recommend attempting to get a referral through the UNHCR. They should be collecting applications at the " + residing + ". Canada is currently working hard to bridge the gap between genders. The average salary of a " + profession + " is " + aveSalary + ". If you would like to look into other oppurtnities in the country based on your other skills; there are many oppurtnities in Canada.";
+      if (languages.length >= 0) {
+        text += " The fact that you know " + languages + " is very valubale when looking for jobs. ";
+      }
+      if (parseInt(kids) > 0) {
+        text += "Going through the resettling process can be espically hard on children. Canada has school systems for all ages. " 
+      }
+      if (family == "Canada" || friends == "Canada") {
+        text += " Your friends or family in Canada can be your proposers for your application here to help the communications go more smoothly."
+      }
+
+// The average <profession> dentist in America makes <salary>. With your <cooking skills> you could also work as a <chief>. The average <chief> makes <salary>."
+      document.getElementById("text").innerHTML = text;
+    }
+    getResponse();
+    </script>
+    
 
     <hr size="7" color="black">
 

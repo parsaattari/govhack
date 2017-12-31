@@ -99,19 +99,75 @@
 
 <button onclick="myFunction()">Try it</button>
 
-<p id="demo"></p>
 
 <script>
 function myFunction() {
-    var x = document.getElementById("questionaire");
-    var response = [];
-    var i;
-    for (i = 0; i < x.length - 1 ;i++) {
-        response.push(x.elements[i].value);
+  var x = document.getElementById("questionaire");
+  var res= [];
+  var i;
+  for (i = 0; i < x.length - 1 ;i++) {
+    res.push(x.elements[i].value);
+  }
+
+  var options = {"usa" : 70, "ca" : 70, "au" : 70};
+
+  var fleed = res[0].toLowerCase(); //if country is iraq or syria add points for au
+  var been = res[1].toLowerCase(); //if country is au, ca, or usa decrease those respectivly 
+  var residing = res[2].toLowerCase(); // if country is any of them decrease 
+  var gender = res[3].toLowerCase();
+  var profession = res[4].toLowerCase();
+  var skills = res[5].toLowerCase();
+  var languages = res[6].toLowerCase();
+  var kids = res[7].toLowerCase();
+  var numberKids= res[8].toLowerCase();
+  var family = res[9].toLowerCase();
+  var friends = res[10].toLowerCase();
+  var finances = res[11].toLowerCase();
+  console.log(res);
+  var theThree = ["usa", "ca", "au"];
+  if (fleed.includes("iraq") || fleed.includes("syria")) {
+    options["au"] += 5;
+  } 
+  if (been.includes("usa")){
+    options["usa"] -= 5;
+  }  
+  if (been.includes("ca")) {
+    options["ca"] -= 5;
+  } 
+  if (been.includes("au")) {
+    options["au"] -= 5;
+  }  
+  if (languages.includes("french")) {
+      options["ca"] += 10; 
+  }  
+  if (family.includes("usa") || friends.includes("usa")){
+    options["usa"] += 15;
+  }  
+  if (family.includes("ca") || friends.includes("ca")) {
+    options["ca"] += 15;
+  } 
+  if (family.includes("au") || friends.includes("au")) {
+    options["au"] += 15;
+  }  
+  if (parseInt(finances) < 5) {
+    options["ca"] += 5;
+  }
+    
+    var i = 1;
+    var keys = Object.keys(options);
+    var mx = options[keys[0]]
+    var chosenOne = keys[0];
+    for (i; i<options.length;i++){
+      if (options[keys[i]] > mx) {
+          mx = options[keys[i]];
+          chosenOne = keys[i]
+        }
     }
-    console.log(response);
-    sessionStorage.setItem('response', response);
-    console.log(sessionStorage.getItem('response'));
+    console.log(languages.includes("french"))
+    console.log(options);
+    res.push(chosenOne);
+  sessionStorage.setItem('response', res);
+  console.log(sessionStorage.getItem('response'));
 
 }
 </script>
