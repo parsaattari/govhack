@@ -59,6 +59,7 @@ a {
 .left-half {
   background: url('./tree.jpg');
   position: absolute;
+  top: 0;
   left: 0px;
   width: 50%;
 }
@@ -66,6 +67,7 @@ a {
 .right-half {
   background: url('./seed.jpg');
   position: absolute;
+  top: 0;
   right: 0px;
   width: 50%;
 }
@@ -134,6 +136,12 @@ label {
   display: inline-block;
 }
 
+.ribbon {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
 </style>
 
 <head>
@@ -143,7 +151,8 @@ label {
 <section class="container">
   <div class="left-half">
     <ul>
-      <li><a href="./index.html">العربية</a></li>
+      <li><a href="feed.html">Share Your Story</a></li>
+      <li><a class="active" href="arabic.html">العربية</a></li>
       <li><a href="farsi.html">فارسی</a></li>
     </ul>
     <article>
@@ -155,10 +164,13 @@ label {
     </article>
   </div>
   <div class="right-half">
-<!--     <article>
-      <a href=''>Explore Countries</a>
-    </article> -->
-    <button class="btn-right" onclick="questionaire()">Explore Countries</button> 
+    <a href="index.html">
+      <img src="./logo22.png" class="ribbon"/>
+    </a>
+    <article>
+      <a href="./questionaire.html">Explore Countries</a>
+    </article>
+    <!-- <button class="btn-right" onclick="questionaire()">Explore Countries</button> --> 
   </div>
 </section>
 <!-- </body> -->
